@@ -1,4 +1,4 @@
-function countSyllables(inString) {
+exports.countSyllables = function(inString) {
     let syllablesTotal = 0;
     let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
     if (wordList) {wordList.forEach((word) => {
@@ -33,7 +33,7 @@ function countSyllables(inString) {
     return syllablesTotal;
 }
 
-function countSyllablesAndPolys(inString) {
+exports.countSyllablesAndPolys = function(inString) {
     let syllablesTotal = 0, polysTotal = 0;
     let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
     if (wordList) {wordList.forEach((word) => {
