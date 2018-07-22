@@ -1,4 +1,8 @@
-Syllable counts and polysyllable counts in Javascript. Try the demo [here.](https://endahallahan.github.io/syllabificate/syllabificateTester.html)
+Syllable counts and polysyllable counts in Javascript. Try the demo [here!](https://endahallahan.github.io/syllabificate/syllabificateTester.html)
+
+Syllable counts are an important part of calculating many readability metrics, such as the Flesch-Kincaid score and the SMOG grade. Syllabificate was created to facilitate faster and more accurate measurements for these calculations. 
+
+*Note: Syllabificate is an English language syllable counter. It may not be accurate in other languages.*
 
 ## Installation
 ```npm install syllabificate```
