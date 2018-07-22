@@ -1,6 +1,6 @@
 {
   "name": "syllabificate",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Counts syllables and polysyllables",
   "main": "index.js",
   "scripts": {
