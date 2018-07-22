@@ -2,10 +2,18 @@
   "name": "syllabificate",
   "version": "1.1.1",
   "description": "Counts syllables and polysyllables",
+  "keywords": ["syllable","polysyllable"],
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EndaHallahan/syllabificate.git"
+  },
+  "bugs": {
+  	"url": "https://github.com/EndaHallahan/syllabificate/issues"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "rb",
-  "license": "ISC"
+  "author": "rb_",
+  "liscense": "MIT"
 }
