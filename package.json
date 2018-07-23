@@ -5,6 +5,7 @@
   "keywords": [
     "syllable",
     "polysyllable"
+    "readability"
   ],
   "main": "index.js",
   "repository": {
