@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/EndaHallahan/syllabificate.svg?branch=master)](https://travis-ci.com/EndaHallahan/syllabificate)
+# Syllabificate [![Build Status](https://travis-ci.com/EndaHallahan/syllabificate.svg?branch=master)](https://travis-ci.com/EndaHallahan/syllabificate)
 
 Syllable counts and polysyllable counts in Javascript. Try the demo [here!](https://endahallahan.github.io/syllabificate/syllabificateTester.html)
 
