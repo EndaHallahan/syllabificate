@@ -8,7 +8,8 @@ assert(syl.countSyllables("ReAliZEd") === 3,"Failed on test 'ReAliZEd: case inse
 assert(syl.countSyllables("Electric slide") === 4,"Failed on test 'Electric slide': expected 4");
 
 //test polys
-assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on test 'unicorns enjoy avocado a lot': pollysyllable count faliure, expected 2");
+assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on countSyllablesAndPolys: pollysyllable count faliure, expected 2");
+assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on countPolys: pollysyllable count faliure, expected 2");
 
 //test empty strings
 assert(syl.countSyllables("") === 0, "Failed on empty string");
