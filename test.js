@@ -9,7 +9,7 @@ assert(syl.countSyllables("Electric slide") === 4,"Failed on test 'Electric slid
 
 //test polys
 assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on countSyllablesAndPolys: pollysyllable count faliure, expected 2");
-assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on countPolys: pollysyllable count faliure, expected 2");
+assert(syl.countPolys("Purple unicorns enjoy avocado a lot.") === 2,"Failed on countPolys: pollysyllable count faliure, expected 2");
 
 //test empty strings
 assert(syl.countSyllables("") === 0, "Failed on empty string");

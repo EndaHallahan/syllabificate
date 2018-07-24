@@ -70,7 +70,7 @@ exports.countPolys = function (inString) {
     let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
     if (wordList) {wordList.forEach((word) => {
         if (word === "'"||word==="’") {return;} //bandaid solution.
-        if (word.length <= 2) {syllablesTotal += 1; return;} //quick return on short words
+        if (word.length <= 3) {return;} //quick return on short words
         let syllables = 0;
         if (word.endsWith("s'")||word.endsWith("s’")) {word.slice(-1);} //ending with s'
         if (word.endsWith("s's")||word.endsWith("s’s")) {word.slice(-1,-3);} //ending with s's
