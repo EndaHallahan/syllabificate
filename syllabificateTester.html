@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Syllibificate</title>
 		<script>
+			//This is the same countSyllablesAndPolys function as the one included in the Syllabificate package.
 			function countSyllablesAndPolys(inString) {
 		        let syllablesTotal = 0, polysTotal = 0;
 			    let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
@@ -26,7 +27,7 @@
 			        if (osylm) {syllables -= osylm.length;} //O clustered negative
 			        const usylp = word.match(/uo|[^g]ua[^r]/gmi);
 			        if (usylp) {syllables += usylp.length;} //U clustered positive
-			        const asylp = word.match(/asm(s$|$)|ausea/gmi);
+			        const asylp = word.match(/asm(s$|$)|ausea|eal[^m]/gmi);
 			        if (asylp) {syllables += asylp.length;} //A clustered positive
 			        const eVowels = word.match(/[aiouy](?![aeiouy])|e(?!$|-|[aeiouy]| )/gmi);
 			        if (eVowels) {syllables += eVowels.length;} //Applicable vowel count (all but e at end of word)
@@ -37,7 +38,7 @@
 			        syllablesTotal += syllables;
 			    });}
 			    return [syllablesTotal, polysTotal];
-		    }
+			}
 
 		    function syllibificate() {
 		    	let syllables = countSyllablesAndPolys(document.getElementById("inText").value);
