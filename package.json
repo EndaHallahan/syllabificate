@@ -4,7 +4,7 @@
   "description": "Counts syllables and polysyllables",
   "keywords": [
     "syllable",
-    "polysyllable"
+    "polysyllable",
     "readability"
   ],
   "main": "index.js",
@@ -16,7 +16,7 @@
     "url": "https://github.com/EndaHallahan/syllabificate/issues"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test.js"
   },
   "author": "rb_",
   "license": "MIT"
