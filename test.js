@@ -2,7 +2,7 @@ const assert = require('assert');
 const syl = require('./index');
 
 //Test case insensitivity
-assert(syl.countSyllables("UnIcorN") === 3,"Failed on test 'UnIcorN: case insensitivity faliure");
+assert(syl.countSyllables("ReAliZEd") === 3,"Failed on test 'ReAliZEd: case insensitivity faliure");
 
 //test multiple words
 assert(syl.countSyllables("Electric slide") === 4,"Failed on test 'Electric slide': expected 4");
@@ -10,14 +10,18 @@ assert(syl.countSyllables("Electric slide") === 4,"Failed on test 'Electric slid
 //test polys
 assert(syl.countSyllablesAndPolys("Purple unicorns enjoy avocado a lot.")[1] === 2,"Failed on test 'unicorns enjoy avocado a lot': pollysyllable count faliure, expected 2");
 
-//Accuracy tests, single
+//test empty strings
+assert(syl.countSyllables("") === 0, "Failed on empty string");
+assert(syl.countSyllables(" ") === 0, "Failed on space");
+
+//Accuracy tests, single word
 assert(syl.countSyllables("syllabificate") === 5,"Failed on test 'syllabificate': expected 5");
 assert(syl.countSyllables("unicorn") === 3,"Failed on test 'unicorn': expected 3");
 assert(syl.countSyllables("plutonium") === 4,"Failed on test 'plutonium': expected 4");
 assert(syl.countSyllables("everything") === 3,"Failed on test 'everything': expected 3");
 assert(syl.countSyllables("haughty") === 2,"Failed on test 'haughty': expected 2");
 assert(syl.countSyllables("the") === 1,"Failed on test 'the': expected 1");
-assert(syl.countSyllables("don't") === 1,"Failed on test 'don't: expected 1");
+assert(syl.countSyllables("don't") === 1,"Failed on test 'don't': expected 1");
 assert(syl.countSyllables("just") === 1,"Failed on test 'just': expected 1");
 assert(syl.countSyllables("imagination") === 5,"Failed on test 'imagination': expected 5");
 assert(syl.countSyllables("celestial") === 4,"Failed on test 'celestial': expected 4");
@@ -30,6 +34,10 @@ assert(syl.countSyllables("rhythm") === 1,"Failed on test 'rhythm': expected 1")
 assert(syl.countSyllables("bulkier") === 3,"Failed on test 'bulkier': expected 3");
 assert(syl.countSyllables("rattled") === 2,"Failed on test 'rattled': expected 2");
 assert(syl.countSyllables("terrible") === 3,"Failed on test 'terrible': expected 3");
+assert(syl.countSyllables("realize") === 3,"Failed on test 'realize': expected 3");
+assert(syl.countSyllables("realized") === 3,"Failed on test 'realized': expected 3");
+assert(syl.countSyllables("realizes") === 4,"Failed on test 'realizes': expected 4");
+assert(syl.countSyllables("realizing") === 4,"Failed on test 'realizing': expected 4");
 
 //Accuracy tests, passages
 //1
@@ -53,5 +61,12 @@ assert(syl.countSyllables(`In the not too distant future, next sunday A.D.
 	There was a guy named Joel. Not too different from you or me!`) === 27, "Failed on passage test 3a: expected 27")
 assert(syl.countSyllablesAndPolys(`In the not too distant future, next sunday A.D. 
 	There was a guy named Joel. Not too different from you or me!`)[0] === 27, "Failed on passage test 3b: expected 27")
+
+//4
+assert(syl.countSyllables(`That was when she heard sirens, which at first she thought were municipal censorship to spare regular citizens from having to hear this kind of talk on community airtime, 
+	but then she realized were actually on the road behind her.`) === 61, "Failed on passage 4a: expected 61")
+assert(syl.countSyllablesAndPolys(`That was when she heard sirens, which at first she thought were municipal censorship to spare regular citizens from having to hear this kind of talk on community airtime, 
+	but then she realized were actually on the road behind her.`)[0] === 61, "Failed on passage 4b: expected 61")
+
 
 console.log("All tests passed!");
