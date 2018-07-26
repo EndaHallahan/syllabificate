@@ -18,11 +18,11 @@ assert(syl.countSyllables(" ") === 0, "Count failed on space");
 
 //Accuracy tests, single word
 Object.keys(singleTests).forEach(key => 
-	assert(syl.countSyllables(key) === SingleTests[key],"Count failed on test '"+key+"': expected "+SingleTests[key])
+	assert(syl.countSyllables(key) === singleTests[key],"Count failed on test '"+key+"': expected "+singleTests[key])
 	);
 
 Object.keys(singleTests).forEach(key => 
-	assert(syl.countSyllablesAndPolys(key)[0] === SingleTests[key],"AndPoly failed on test '"+key+"': expected "+SingleTests[key])
+	assert(syl.countSyllablesAndPolys(key)[0] === singleTests[key],"AndPoly failed on test '"+key+"': expected "+singleTests[key])
 	);
 
 //Accuracy tests, passages
