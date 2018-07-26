@@ -45,8 +45,10 @@ assert(syl.countSyllables("unabashedly") === 5,"Count failed on test 'unabashedl
 assert(syl.countSyllables("zion") === 2,"Count failed on test 'zion': expected 2");
 assert(syl.countSyllables("pollution") === 3,"Count failed on test 'pollution': expected 3");
 assert(syl.countSyllables("weilded") === 3,"Count failed on test 'weilded': expected 3");
-assert(syl.countSyllables("wsuggestiveness") === 4,"Count failed on test 'suggestiveness': expected 4");
+assert(syl.countSyllables("suggestiveness") === 4,"Count failed on test 'suggestiveness': expected 4");
 assert(syl.countSyllables("liver") === 2,"Count failed on test 'liver': expected 2");
+assert(syl.countSyllables("stereoscopic") === 5,"Count failed on test 'stereoscopic': expected 5");
+assert(syl.countSyllables("mayonnaise") === 3,"Count failed on test 'mayonnaise': expected 3");
 
 assert(syl.countSyllablesAndPolys("syllabificate")[0] === 5,"AndPoly failed on test 'syllabificate': expected 5");
 assert(syl.countSyllablesAndPolys("unicorn")[0] === 3,"AndPoly failed on test 'unicorn': expected 3");
@@ -79,6 +81,8 @@ assert(syl.countSyllablesAndPolys("pollution")[0] === 3,"AndPoly failed on test 
 assert(syl.countSyllablesAndPolys("weilded")[0] === 3,"AndPoly failed on test 'weilded': expected 3");
 assert(syl.countSyllablesAndPolys("wsuggestiveness")[0] === 4,"AndPoly failed on test 'suggestiveness': expected 4");
 assert(syl.countSyllablesAndPolys("liver")[0] === 2,"AndPoly failed on test 'liver': expected 2");
+assert(syl.countSyllablesAndPolys("stereoscopic")[0] === 5,"AndPoly failed on test 'stereoscopic': expected 5");
+assert(syl.countSyllablesAndPolys("mayonnaise")[0] === 3,"AndPoly failed on test 'mayonnaise': expected 3");
 
 
 //Accuracy tests, passages
