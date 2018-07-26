@@ -16,7 +16,7 @@
     "url": "https://github.com/EndaHallahan/syllabificate/issues"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "node test/test.js"
   },
   "author": "rb_",
   "license": "MIT"
