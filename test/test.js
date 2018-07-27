@@ -3,7 +3,7 @@ const syl = require('../index');
 const singleTests = require('./singleTests.json');
 
 //Test case insensitivity
-assert(syl.countSyllables("ReAliZEd") === 3,"Count failed on test 'ReAliZEd': case insensitivity faliure");
+assert(syl.countSyllables("ReAliZEd") === 3,"Count failed on test 'ReAliZEd': case insensitivity faliure, got "+syl.countSyllables("ReAliZEd"));
 
 //test multiple words
 assert(syl.countSyllables("Electric slide") === 4,"Count failed on test 'Electric slide': expected 4");
@@ -18,11 +18,11 @@ assert(syl.countSyllables(" ") === 0, "Count failed on space");
 
 //Accuracy tests, single word
 Object.keys(singleTests).forEach(key => 
-	assert(syl.countSyllables(key) === singleTests[key],"Count failed on test '"+key+"': expected "+singleTests[key])
+	assert(syl.countSyllables(key) === singleTests[key],"Count failed on test '"+key+"': expected "+singleTests[key]+", got "+syl.countSyllables(key))
 	);
 
 Object.keys(singleTests).forEach(key => 
-	assert(syl.countSyllablesAndPolys(key)[0] === singleTests[key],"AndPoly failed on test '"+key+"': expected "+singleTests[key])
+	assert(syl.countSyllablesAndPolys(key)[0] === singleTests[key],"AndPoly failed on test '"+key+"': expected "+singleTests[key]+", got "+syl.countSyllablesAndPolys(key))
 	);
 
 //Accuracy tests, passages
