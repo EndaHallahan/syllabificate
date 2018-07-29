@@ -11,7 +11,7 @@ exports.countSyllables = function (inString) {
         if (esylp) {syllables += esylp.length;} //E clustered positive
         const esylm = word.match(/every|some([^aeiouy]|$)|[^t]ere(?!d|$|o|r|t|a[^v]|n)|[^g]eous|(^d|p|l)ea|ea[urkts]/gmi);
         if (esylm) {syllables -= esylm.length;} //E clustered negative
-        const isylp = word.match(/rie[^sndf]|[^tcs]ia|siai|[^ct]ious|[aeiou]ism(s$|$)|quie|lier|settli|stia|aying|kier|[^cn]ien[^d]|[aeioy]ing$|[^q]uing$|ithm|dei[tf]|ium|ible|eil|ifle|iel/gmi);
+        const isylp = word.match(/rie[^sndfv]|[^tcs]ia|siai|[^ct]ious|[aeiou]ism(s$|$)|quie|[lk]ier|settli|stia|aying|[^cn]ien[^d]|[aeioy]ing$|[^q]uing$|ithm|dei[tf]|ible|eil|ifle|iel/gmi);
         if (isylp) {syllables += isylp.length;} //I clustered positive
         const osylp = word.match(/nyo|osm(s$|$)|oinc|ored(?!$)|[^t]io|oale|[aeiou]yoe/gmi);
         if (osylp) {syllables += osylp.length;} //O clustered positive
@@ -19,19 +19,21 @@ exports.countSyllables = function (inString) {
         if (osylm) {syllables -= osylm.length;} //O clustered negative
         const asylp = word.match(/asm(s$|$)|ausea|oa$|anti[aeiou]|raor/gmi);
         if (asylp) {syllables += asylp.length;} //A clustered positive
-        const asylm = word.match(/aste(?!$|ful)|ates/gmi);
+        const asylm = word.match(/aste(?!$|ful)/gmi);
         if (asylm) {syllables -= asylm.length;} //A clustered negative
-        const usylp = word.match(/uo[^y]|[^g]ua(?!r)|uen|ius/gmi);
+        const usylp = word.match(/uo[^y]|[^g]ua(?!r)|uen|[^g]iu|uille/gmi);
         if (usylp) {syllables += usylp.length;} //U clustered positive
         const usylm = word.match(/quain|geous|busi|logu[^e]/gmi);
         if (usylm) {syllables -= usylm.length;} //U clustered negative
-        const ysylp = word.match(/[ibcmrlu]ya|[^e]yo|[aiou]y[aiou]|[aor]ye(tt|l|n|v|z)|dy[ae]|oyee/gmi);
+        const ysylp = word.match(/[ibcmrlu]ya|[^e]yo|[aiou]y[aiou]|[aoru]ye(tt|l|n|v|z)|dy[ae]|oyee|lyen/gmi);
         if (ysylp) {syllables += ysylp.length;} //Y clustered positive
-        const esuffix = word.match(/(((?!c[hrl]|sh|\w[iszxgej]|bl|[niauer]c).{2}|^.{0,1})es$)|([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtb]|[aeiouy][^aeiouy][^laeiouyrdtb]|ll|bb|ield)ed$|[^cd]red$/gmi);
-        if (esuffix) {syllables -= esuffix.length;}//es and ed suffixes
+        const essuffix = word.match(/(((?!c[hrl]|sh|\w[iszxgej]|bl|[niauer]c|tl).{2}|^.{0,1})es($|ville$))/gmi);
+        if (essuffix) {syllables--;}//es suffix
+        const edsuffix = word.match(/([aeiouy][^aeiouyrdt]|[^aeiouy][^laeiouyrdtb]|ll|bb|ield)ed$|[^cd]red$/gmi);
+        if (edsuffix) {syllables--}
         const csylp = word.match(/chn/gmi);
         if (csylp) {syllables += csylp.length;} //Consonant clustered negative
-        const eVowels = word.match(/[aiouy](?![aeiouy])|ee|e(?!$|-|[eiu]|(side|\wess|ly|ment|ship|board|ground|ville|port|ful)s?$)/gmi);
+        const eVowels = word.match(/[aiouy](?![aeiouy])|ee|e(?!$|-|[eiu]|(side|\wess|ly|ment|ship|board|ground|ville|port|ful(ly)?|berry)s?$)/gmi);
         if (eVowels) {syllables += eVowels.length;} //Applicable vowel count (all but e at end of word)
         if (syllables <= 0) {syllables = 1;} //catch-all
         if (word.match(/[^aeiou]n['’]t$/i)) {syllables ++;} //ending in n't, but not en't
