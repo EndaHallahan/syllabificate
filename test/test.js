@@ -16,6 +16,16 @@ assert(syl.countPolys("Purple unicorns enjoy avocado a lot.") === 2,"CountPoly f
 assert(syl.countSyllables("") === 0, "Count failed on empty string");
 assert(syl.countSyllables(" ") === 0, "Count failed on space");
 
+/*singleTests is a modified version of the unit tests used by Syllable 
+(https://github.com/words/syllable), themselves borrowed from Text Statistics
+(https://github.com/DaveChild/Text-Statistics). 
+Modifications primarily revolved around the removal of non-english test cases
+that do not adhere to English's syllabification rules. I felt it was more important to
+focus on the language I'm primarily looking to measure than to try and build in
+exceptions for these. I've also added some specific test cases of my own.
+-RB
+*/
+
 //Accuracy tests, single word
 Object.keys(singleTests).forEach(key => 
 	assert(syl.countSyllables(key) === singleTests[key],"Count failed on test '"+key+"': expected "+singleTests[key]+", got "+syl.countSyllables(key))
