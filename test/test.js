@@ -51,17 +51,22 @@ const pTestThree = `In the not too distant future, next sunday A.D. There was a 
 const pTestFour = `That was when she heard sirens, which at first she thought were municipal censorship to spare regular citizens from having to hear this kind of talk on community airtime, 
 	but then she realized were actually on the road behind her.` //61 syllables
 
+const pTestFive = `Syllabification, noun: the division of words into syllables, either in speech or in writing.` //26 syllables
+
 assert(syl.countSyllables(pTestOne) === 72, "Count failed on passage test 1: expected 72, got " + syl.countSyllables(pTestOne));
 assert(syl.countSyllablesAndPolys(pTestOne)[0] === 72, "AndPoly failed on passage test 1: expected 72, got " + syl.countSyllablesAndPolys(pTestOne));
 
 assert(syl.countSyllables(pTestTwo) === 103, "Count Failed on passage test 2: expected 103, got " + syl.countSyllables(pTestTwo));
 assert(syl.countSyllablesAndPolys(pTestTwo)[0] === 103, "AndPoly failed on passage test 2: expected 103, got " + syl.countSyllablesAndPolys(pTestTwo));
 
-assert(syl.countSyllables(pTestThree) === 27, "Count failed on passage test 3: expected 27, got " + syl.countSyllables(pTestThree))
-assert(syl.countSyllablesAndPolys(pTestThree)[0] === 27, "AndPoly failed on passage test 3: expected 27, got " + syl.countSyllablesAndPolys(pTestThree))
+assert(syl.countSyllables(pTestThree) === 28, "Count failed on passage test 3: expected 28, got " + syl.countSyllables(pTestThree))
+assert(syl.countSyllablesAndPolys(pTestThree)[0] === 28, "AndPoly failed on passage test 3: expected 28, got " + syl.countSyllablesAndPolys(pTestThree))
 
-assert(syl.countSyllables(pTestfour) === 61, "Count failed on passage 4: expected 61, got " + syl.countSyllables(pTestFour))
+assert(syl.countSyllables(pTestFour) === 61, "Count failed on passage 4: expected 61, got " + syl.countSyllables(pTestFour))
 assert(syl.countSyllablesAndPolys(pTestFour)[0] === 61, "AndPoly failed on passage 4: expected 61, got " + syl.countSyllablesAndPolys(pTestFour))
+
+assert(syl.countSyllables(pTestFive) === 26, "Count failed on passage 5: expected 26, got " + syl.countSyllables(pTestFive))
+assert(syl.countSyllablesAndPolys(pTestFive)[0] === 26, "AndPoly failed on passage 5: expected 26, got " + syl.countSyllablesAndPolys(pTestFive))
 
 
 console.log("All tests passed!");
