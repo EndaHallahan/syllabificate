@@ -19,7 +19,7 @@
 			        if (cEndings) {word = word.replace(cEndings[0],"\n" + cEndings[0]);} //Splits into two words and evaluates them as such
 			        const cBeginnings = word.match(/^(ware|side|p?re(?!ach|agan|al|au))/mi);
 			        if (cBeginnings) {word = word.replace(cBeginnings[0],""); syllables++;}
-			        const esylp = word.match(/ie($|l|t|rg)|nuine|[cb]le$|ttle$|ywed$|phe$|ucle[aeiuy]|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoa]les$|[^e]rge$|gged$|sche$|seer|^re[eiuy]|cked$|etched$|ohe$|gge$/gmi);
+			        const esylp = word.match(/ie($|l|t|rg)|nuine|[cb]le$|ttle$|ywed$|phe$|ucle[aeiuy]|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|[^e]rge$|gged$|sche$|seer|^re[eiuy]|cked$|etched$|ohe$|gge$/gmi);
 			        if (esylp) {syllables += esylp.length;} //E clustered positive
 			        const esylm = word.match(/every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gmi);
 			        if (esylm) {syllables -= esylm.length;} //E clustered negative
@@ -55,7 +55,7 @@
 			        if (syllables >= 3) {polysTotal++;}
 			        syllablesTotal += syllables;
 			    });}
-   			 	return [syllablesTotal, polysTotal];
+			    return [syllablesTotal, polysTotal];
 			};
 
 		    function syllibificate() {
