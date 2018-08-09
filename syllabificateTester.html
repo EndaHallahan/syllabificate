@@ -8,7 +8,6 @@
 			//This is the same countSyllablesAndPolys function as the one included in the Syllabificate package.
 			function countSyllablesAndPolys(inString) {
 		        let syllablesTotal = 0, polysTotal = 0;
-			    let syllablesTotal = 0, polysTotal = 0;
 			    let wordList = inString.match(/(?:(?:\w-\w)|[\wÀ-ÿ'’])+/g);
 			    if (wordList) {wordList.forEach((word) => {
 			        if (word === "'"||word==="’") {return;} //bandaid solution.
