@@ -19,7 +19,7 @@
 			        if (cEndings) {word = word.replace(cEndings[0],"\n" + cEndings[0]);} //Splits into two words and evaluates them as such
 			        const cBeginnings = word.match(/^(ware|side|p?re(?!ach|agan|al|au))/mi);
 			        if (cBeginnings) {word = word.replace(cBeginnings[0],""); syllables++;}
-			        const esylp = word.match(/ie($|l|t|rg)|([cb]|tt)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gmi);
+			        const esylp = word.match(/ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gmi);
 			        if (esylp) {syllables += esylp.length;} //E clustered positive
 			        const esylm = word.match(/every|some([^aeiouyr]|$)|[^trb]ere(?!d|$|o|r|t|a[^v]|n|s|x)|[^g]eous|niet/gmi);
 			        if (esylm) {syllables -= esylm.length;} //E clustered negative
@@ -27,7 +27,7 @@
 			        if (isylp) {syllables += isylp.length;} //I clustered positive
 			        const osylp = word.match(/nyo|osm(s$|$)|oinc|ored(?!$)|(^|[^ts])io|oale|[aeiou]yoe|^m[ia]cro([aiouy]|e)|roe(v|$)|ouel|^proa|oolog/gmi);
 			        if (osylp) {syllables += osylp.length;} //O clustered positive
-			        const osylm = word.match(/[^f]ore(?!$|[vcaot]|d$|tte)|fore/gmi);
+			        const osylm = word.match(/[^f]ore(?!$|[vcaot]|d$|tte)|fore|llio/gmi);
 			        if (osylm) {syllables -= osylm.length;} //O clustered negative
 			        const asylp = word.match(/asm(s$|$)|ausea|oa$|anti[aeiou]|raor|intra[ou]|iae|ahe$|dais|(?<!p)ea(l(?!m)|$)|(?<!j)ean|(?<!il)eage/gmi);
 			        if (asylp) {syllables += asylp.length;} //A clustered positive
@@ -37,9 +37,9 @@
 			        if (usylp) {syllables += usylp.length;} //U clustered positive
 			        const usylm = word.match(/geous|busi|logu(?!e|i)/gmi);
 			        if (usylm) {syllables -= usylm.length;} //U clustered negative
-			        const ysylp = word.match(/[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|pye|dy[ae]|oye[exu]|lye[nlrs]|olye|aye(k|r|$|u[xr]|da)|saye\w|iye|wy[ae]|[^aiou]ying/gmi);
+			        const ysylp = word.match(/[ibcmrluhp]ya|nyac|[^e]yo|[aiou]y[aiou]|[aoruhm]ye(tt|l|n|v|z)|dy[ae]|oye[exu]|lye[nlrs]|(ol|i|p)ye|aye(k|r|$|u[xr]|da)|saye\w|wy[ae]|[^aiou]ying/gmi);
 			        if (ysylp) {syllables += ysylp.length;} //Y clustered positive
-			        const ysylm = word.match(/arley|key/gmi);
+			        const ysylm = word.match(/arley|key|ney$/gmi);
 			        if (ysylm) {syllables -= ysylm.length;}
 			        const essuffix = word.match(/((?<!c[hrl]|sh|[iszxgej]|[niauery]c|do)es$)/gmi);
 			        if (essuffix) {syllables--;}//es suffix
@@ -58,7 +58,7 @@
 			    return [syllablesTotal, polysTotal];
 			};
 
-		    function syllibificate() {
+		    function syllabificate() {
 		    	let syllables = countSyllablesAndPolys(document.getElementById("inText").value);
 		    	document.getElementById("sylOutSpan").innerText = syllables[0].toString();
 		    	document.getElementById("polOutSpan").innerText = syllables[1].toString();
@@ -68,7 +68,8 @@
 	</head>
 	<body>
 		<h1>Syllabificate</h1>
-		<textarea id="inText" rows = "10" cols = "70" autofocus oninput="syllibificate()"></textarea>
+		<p><em>Found a word that doesn't get counted correctly? Open an <a href="https://github.com/EndaHallahan/syllabificate/issues">issue</a> on our <a href="https://github.com/EndaHallahan/syllabificate">Github</a>.</em></p>
+		<textarea id="inText" rows = "10" cols = "70" autofocus oninput="syllabificate()"></textarea>
 		<br>
 		<span>Syllables in this text: <span id="sylOutSpan">0</span> | Polysyllables in this text: <span id="polOutSpan">0</span></span>
 		<br>
