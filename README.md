@@ -20,7 +20,7 @@ syl.countSyllables("Electric slide."); //4
 ### countPolys(*string*)
 Returns the total number of polysyllables (words with 3 or more syllables) in a string.
 ```javascript
-syl.countSyllables("Electric slide."); //1
+syl.countPolys("Electric slide."); //1
 ```
 ### countSyllablesAndPolys(*string*)
 Returns both the total number of syllables and the total number of polysyllables as an array: `[syllables, polysyllables]`. This can be useful if you are calculating multiple metrics.
