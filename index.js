@@ -7,9 +7,9 @@ exports.countSyllables = function (inString) {
         let syllables = 0;
         if (word.endsWith("s'")||word.endsWith("s’")) {word.slice(-1);} //ending with s'
         if (word.endsWith("s's")||word.endsWith("s’s")) {word.slice(-1,-3);} //ending with s's
-        const cEndings = word.match(/(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|horse|anne)s?$/mi);
+        const cEndings = word.match(/(?<=\w{3})(side|\wess|(?<!ed)ly|ment|ship|board|ground|(?<![^u]de)ville|port|ful(ly)?|berry|box|nesse?|such|m[ae]n|wom[ae]n|anne)s?$/mi);
         if (cEndings) {word = word.replace(cEndings[0],"\n" + cEndings[0]);} //Splits into two words and evaluates them as such
-        const cBeginnings = word.match(/^(ware|side|p?re(?!ach|agan|al|au))/mi);
+        const cBeginnings = word.match(/^(ware|side(?![sd]$)|p?re(?!ach|agan|al|au)|[rf]ace(?!([sd]|tte)$)|place[^nsd])/mi);
         if (cBeginnings) {word = word.replace(cBeginnings[0],""); syllables++;}
         const esylp = word.match(/ie($|l|t|rg)|([cb]|tt|pp)le$|phe$|kle(s|$)|[^n]scien|sue|aybe$|[^aeiou]shed|[^lsoai]les$|([^e]r|g)ge$|(gg|ck|yw|etch)ed$|(sc|o)he$|seer|^re[eiuy]/gmi);
         if (esylp) {syllables += esylp.length;} //E clustered positive
